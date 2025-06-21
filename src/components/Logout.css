@@ -1,0 +1,55 @@
+/* Logout.css */
+
+/* Background gradient animation */
+@keyframes pageBg {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.Logout-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(270deg, #00c9ff, #92fe9d, #00c9ff);
+  background-size: 600% 600%;
+  animation: pageBg 16s ease infinite;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  text-align: center;
+}
+
+/* Message zoom-in */
+@keyframes zoomIn {
+  0%   { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1);   opacity: 1; }
+}
+.Logout-message {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  animation: zoomIn 0.8s ease-out forwards;
+}
+
+/* Redirect fade-in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.Logout-redirect {
+  font-size: 1rem;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.5s forwards;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .Logout-message {
+    font-size: 1.5rem;
+  }
+  .Logout-redirect {
+    font-size: 0.9rem;
+  }
+}

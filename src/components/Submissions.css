@@ -1,0 +1,130 @@
+/* Submissions.css */
+
+/* Vivid background animation */
+@keyframes bgGradient {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.Submissions-container {
+  padding: 30px;
+  min-height: 100vh;
+  background: linear-gradient(270deg,
+    #ff758c, #ff7eb3, #7afcff, #feff9c, #ffc6ff, #a1ffce
+  );
+  background-size: 1200% 1200%;
+  animation: bgGradient 25s ease infinite;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  overflow-x: auto;
+}
+
+/* Back link */
+.Submissions-back {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+}
+.Submissions-back::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -4px;
+  width: 100%; height: 2px;
+  background: #333;
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.Submissions-back:hover::after {
+  transform: scaleX(1);
+}
+
+/* Title */
+@keyframes titlePop {
+  0%   { transform: scale(0.8); opacity: 0; }
+  60%  { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+.Submissions-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 0 0 30px;
+  animation: titlePop 1s ease forwards;
+  background: linear-gradient(90deg, #ff6a00, #ee0979);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Grid of cards */
+.Submissions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Card */
+.Submissions-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.Submissions-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+/* Row label */
+.Submissions-row {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+.Submissions-label {
+  font-weight: 600;
+  color: #555;
+}
+
+/* Status badge */
+.Submissions-status {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.status-Accepted   { background: #d4edda; color: #155724; }
+.status-Wrong      { background: #f8d7da; color: #721c24; }
+.status-WrongAnswer { background: #f8d7da; color: #721c24; }
+.status-Pending    { background: #fff3cd; color: #856404; }
+.status-Running    { background: #cce5ff; color: #004085; }
+/* Add more status classes as needed */
+
+/* Code preview */
+.Submissions-code {
+  background: #f5f5f5;
+  padding: 12px;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 0.9rem;
+  max-height: 120px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+}
+
+/* No data */
+.Submissions-nodata {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-top: 40px;
+  color: #555;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .Submissions-title { font-size: 2rem; }
+}

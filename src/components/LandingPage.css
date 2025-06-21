@@ -1,0 +1,88 @@
+/* LandingPage.css */
+
+/* Gradient background animation */
+@keyframes pageBg {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.LandingPage-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(270deg, #00c9ff, #92fe9d, #00c9ff);
+  background-size: 600% 600%;
+  animation: pageBg 16s ease infinite;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  overflow: hidden;
+}
+
+.LandingPage-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Welcome heading animation */
+@keyframes zoomIn {
+  0%   { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1);   opacity: 1; }
+}
+.LandingPage-welcome {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  animation: zoomIn 1s ease-out forwards;
+}
+
+/* Tagline fade-in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.LandingPage-tagline {
+  font-size: 1.25rem;
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: fadeIn 1.2s ease-out 0.5s forwards;
+}
+
+/* Animated overlay */
+@keyframes floatBubbles {
+  0%   { transform: translateY(0)    scale(1);   opacity: 0.6; }
+  50%  { transform: translateY(-20px) scale(1.1); opacity: 0.8; }
+  100% { transform: translateY(0)    scale(1);   opacity: 0.6; }
+}
+.LandingPage-animationbg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.2), transparent 70%);
+  border-radius: 50%;
+  filter: blur(100px);
+  animation: floatBubbles 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .LandingPage-welcome {
+    font-size: 2.2rem;
+  }
+  .LandingPage-tagline {
+    font-size: 1rem;
+  }
+  .LandingPage-animationbg {
+    width: 400px;
+    height: 400px;
+  }
+}

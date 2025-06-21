@@ -1,0 +1,28 @@
+.Clock-Container {
+  text-align: right;
+  padding: 5px 12px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #ffeb3b;
+  box-shadow: 0 0 5px #ffeb3b;
+  animation: clockPulse 2s ease-in-out infinite alternate;
+  font-size: 0.95rem;
+}
+
+.Clock-Time {
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.Clock-Date {
+  font-style: italic;
+  font-size: 0.85rem;
+  opacity: 0.9;
+  color: #fff;
+}
+
+@keyframes clockPulse {
+  from { text-shadow: 0 0 4px #ffeb3b; }
+  to   { text-shadow: 0 0 12px #ffff72; }
+}
